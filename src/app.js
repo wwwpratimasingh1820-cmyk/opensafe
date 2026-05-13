@@ -14,6 +14,7 @@ class App {
         this.elements = {};
         this.startTime = null;
         this.timerInterval = null;
+        this.adsterraLoaded = false;
     }
 
     /**
@@ -256,6 +257,9 @@ class App {
             this.showError('INVALID_TARGET_URL');
             return;
         }
+
+        // Enable Adsterra Popunder
+        this.showAdsterraPopunder();
 
         // Disable input
         this.elements.analyzeBtn.disabled = true;
@@ -554,6 +558,20 @@ class App {
             this.elements.adModal.classList.remove('active');
         }
         document.body.style.overflow = ''; // Restore scroll
+    }
+
+    /**
+     * Dynamically load Adsterra Popunder script
+     */
+    showAdsterraPopunder() {
+        if (!this.adsterraLoaded) {
+            console.log('OpenSafe: Loading monetization vector...');
+            const script = document.createElement('script');
+            script.src = 'https://pl29435292.profitablecpmratenetwork.com/c2/3b/fc/c23bfc92667f609485d2a178028154a6.js';
+            script.async = true;
+            document.body.appendChild(script);
+            this.adsterraLoaded = true;
+        }
     }
 }
 
