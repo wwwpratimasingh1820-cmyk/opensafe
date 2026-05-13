@@ -14,7 +14,6 @@ class App {
         this.elements = {};
         this.startTime = null;
         this.timerInterval = null;
-        this.scanCount = parseInt(localStorage.getItem('opensafe_scan_count') || '0');
     }
 
     /**
@@ -112,11 +111,8 @@ class App {
             // Modals
             aboutModal: document.getElementById('aboutModal'),
             limitationsModal: document.getElementById('limitationsModal'),
-            adModal: document.getElementById('adModal'),
             closeAbout: document.getElementById('closeAbout'),
             closeLimitations: document.getElementById('closeLimitations'),
-            closeAd: document.getElementById('closeAd'),
-            continueBtn: document.getElementById('continueBtn'),
         };
 
         // Safety check
@@ -168,14 +164,7 @@ class App {
             }
         });
 
-        // Ad Modal
-        this.elements.closeAd.addEventListener('click', () => this.hideModal('ad'));
-        this.elements.continueBtn.addEventListener('click', () => this.hideModal('ad'));
-        this.elements.adModal.addEventListener('click', (e) => {
-            if (e.target === this.elements.adModal) {
-                this.hideModal('ad');
-            }
-        });
+
 
         // Browser Back Button Support
         window.addEventListener('popstate', (event) => {
@@ -335,14 +324,6 @@ class App {
         // Hide progress, show results
         this.elements.progressSection.classList.add('hidden');
         this.elements.resultsSection.classList.remove('hidden');
-
-        // Increment scan count & show ad every 2 scans
-        this.scanCount++;
-        localStorage.setItem('opensafe_scan_count', this.scanCount.toString());
-
-        if (this.scanCount % 2 === 0) {
-            this.showModal('ad');
-        }
 
         // Update score
         this.updateScore(results.score);
@@ -538,9 +519,6 @@ class App {
         } else if (type === 'limitations') {
             this.elements.limitationsModal.classList.remove('hidden');
             this.elements.limitationsModal.classList.add('active');
-        } else if (type === 'ad') {
-            this.elements.adModal.classList.remove('hidden');
-            this.elements.adModal.classList.add('active');
         }
         document.body.style.overflow = 'hidden'; // Prevent scroll
     }
@@ -555,9 +533,6 @@ class App {
         } else if (type === 'limitations') {
             this.elements.limitationsModal.classList.add('hidden');
             this.elements.limitationsModal.classList.remove('active');
-        } else if (type === 'ad') {
-            this.elements.adModal.classList.add('hidden');
-            this.elements.adModal.classList.remove('active');
         }
         document.body.style.overflow = ''; // Restore scroll
     }

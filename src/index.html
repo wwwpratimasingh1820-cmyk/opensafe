@@ -17,16 +17,9 @@
     rel="stylesheet">
 
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;">
+    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;">
 
-  <!-- 
-    ================================================================
-    GOOGLE ADSENSE: PASTE YOUR GLOBAL SCRIPT BELOW 
-    Replace 'ca-pub-XXXXXXXXXXXXXXXX' with your own Publisher ID
-    ================================================================
-  -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5522506457376881"
-    crossorigin="anonymous"></script>
+
 
   <!-- PWA -->
   <link rel="manifest" href="/manifest.json">
@@ -75,6 +68,25 @@
             <button id="analyzeBtn" class="analyze-btn">RUN_ANALYSIS</button>
           </div>
           <div class="recent-scans" id="recentScans"></div>
+        </div>
+
+        <!-- SEO/Explanatory Content Grid -->
+        <div class="landing-info-grid">
+          <div class="info-card">
+            <div class="info-icon">🛡️</div>
+            <h3 class="info-title">CLIENT-SIDE FORENSICS</h3>
+            <p class="info-text">OpenSafe executes advanced heuristic analysis directly in your browser environment. By performing all security audits locally, we ensure your data never leaves your machine.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">🕵️</div>
+            <h3 class="info-title">DEEP VECTOR SCAN</h3>
+            <p class="info-text">Our engine evaluates SSL/TLS infrastructure, monitors DOM mutations, identifies invasive trackers, and recognizes phishing payloads using real-time behavioral signatures.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">🔒</div>
+            <h3 class="info-title">ZERO-SERVER PRIVACY</h3>
+            <p class="info-text">Unlike traditional scanners, AetherTech systems operate with a zero-storage protocol. We don't just protect your privacy; we mathematically eliminate the possibility of data leaks.</p>
+          </div>
         </div>
       </section>
 
@@ -220,33 +232,6 @@
         <li><strong>Sandbox Analysis</strong>: Heuristic detection is restricted to publicly reachable assets.</li>
         <li><strong>Proxy Reliance</strong>: Analysis depth may vary based on proxy node availability.</li>
       </ul>
-    </div>
-  </div>
-
-  <div class="modal hidden" id="adModal">
-    <div class="modal-content ad-modal-content">
-      <button class="modal-close" id="closeAd">&times;</button>
-      <div class="ad-container">
-        <p class="ad-label">SPONSORED_CONTENT [AETHERTECH_AD_SERVER]</p>
-        <div class="ad-placeholder">
-          <!-- 
-            ================================================================
-            PASTE YOUR INDIVIDUAL AD UNIT CODE BELOW
-            Replace 'ca-pub-XXXXXXXXXXXXXXXX' and 'data-ad-slot' ID
-            ================================================================
-          -->
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-5522506457376881"
-               data-ad-slot="XXXXXXXXXX"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-          <script>
-               (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-        </div>
-        <button class="export-btn secondary" style="width:100%; margin-top:1rem;" id="continueBtn">CONTINUE_TO_RESULTS</button>
-      </div>
     </div>
   </div>
 
