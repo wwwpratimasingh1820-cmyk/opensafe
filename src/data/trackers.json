@@ -1,0 +1,94 @@
+{
+    "trackers": [
+        {
+            "name": "Google Analytics",
+            "domain": "google-analytics.com",
+            "pattern": "analytics",
+            "category": "Analytics"
+        },
+        {
+            "name": "Google Tag Manager",
+            "domain": "googletagmanager.com",
+            "pattern": "gtm",
+            "category": "Analytics"
+        },
+        {
+            "name": "Facebook Pixel",
+            "domain": "facebook.net",
+            "pattern": "fbevents",
+            "category": "Social"
+        },
+        {
+            "name": "Hotjar",
+            "domain": "hotjar.com",
+            "pattern": "hotjar",
+            "category": "Analytics"
+        },
+        {
+            "name": "Mixpanel",
+            "domain": "mixpanel.com",
+            "pattern": "mixpanel",
+            "category": "Analytics"
+        },
+        {
+            "name": "Segment",
+            "domain": "segment.com",
+            "pattern": "segment",
+            "category": "Analytics"
+        },
+        {
+            "name": "Amplitude",
+            "domain": "amplitude.com",
+            "pattern": "amplitude",
+            "category": "Analytics"
+        },
+        {
+            "name": "Heap Analytics",
+            "domain": "heapanalytics.com",
+            "pattern": "heap",
+            "category": "Analytics"
+        },
+        {
+            "name": "Crazy Egg",
+            "domain": "crazyegg.com",
+            "pattern": "crazyegg",
+            "category": "Analytics"
+        },
+        {
+            "name": "Mouseflow",
+            "domain": "mouseflow.com",
+            "pattern": "mouseflow",
+            "category": "Analytics"
+        },
+        {
+            "name": "FullStory",
+            "domain": "fullstory.com",
+            "pattern": "fullstory",
+            "category": "Analytics"
+        },
+        {
+            "name": "Intercom",
+            "domain": "intercom.io",
+            "pattern": "intercom",
+            "category": "Customer Support"
+        },
+        {
+            "name": "Drift",
+            "domain": "drift.com",
+            "pattern": "drift",
+            "category": "Customer Support"
+        },
+        {
+            "name": "Zendesk",
+            "domain": "zendesk.com",
+            "pattern": "zendesk",
+            "category": "Customer Support"
+        },
+        {
+            "name": "LiveChat",
+            "domain": "livechatinc.com",
+            "pattern": "livechat",
+            "category": "Customer Support"
+        }
+    ]
+}

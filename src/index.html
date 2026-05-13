@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="OpenSafe - Ultra-Secure Website Analyzer. 100% client-side security audits by AetherTech.">
+  <meta name="keywords" content="website safety, security checker, privacy analyzer, phishing detection, aethertech">
+  <meta name="author" content="AetherTech">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#10b981">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/logo.png">
+
+  <title>OpenSafe // AetherTech Security Scanner</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-section">
+          <img src="./assets/logo.png" alt="OpenSafe Logo" class="logo" id="logo">
+          <div class="brand">
+            <h1 class="brand-name">OpenSafe</h1>
+            <p class="brand-tagline">AETHERTECH SYSTEMS</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <button class="nav-btn" id="aboutBtn">INFO</button>
+          <button class="nav-btn" id="limitationsBtn">LIMITS</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+
+      <!-- Hero Section -->
+      <section class="hero" id="heroSection">
+        <h2 class="hero-title">SCAN SYSTEM</h2>
+        <p class="hero-subtitle">100% Client-side. Privacy-focused website forensics.</p>
+
+        <!-- URL Input -->
+        <div class="input-panel">
+          <div class="input-wrapper">
+            <input type="url" id="urlInput" class="url-input" placeholder="ENTER URL TO DEEP_SCAN..."
+              autocomplete="url">
+            <button id="analyzeBtn" class="analyze-btn">RUN_ANALYSIS</button>
+          </div>
+          <div class="recent-scans" id="recentScans"></div>
+        </div>
+      </section>
+
+      <!-- Progress Section -->
+      <section class="progress-section hidden" id="progressSection">
+        <div class="progress-card">
+          <div id="progressContent">
+            <h3 class="progress-title">ENCRYPTED_SCAN_IN_PROGRESS</h3>
+            <div class="progress-bar-wrapper">
+              <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p class="progress-status mono-stream" id="progressStatus">INIT_SYSTEM...</p>
+            <p class="progress-time mono-stream" id="progressTime">0.0s</p>
+          </div>
+
+          <div id="errorContent" class="hidden">
+            <div class="error-icon">⚠️</div>
+            <h3 class="error-title">CRITICAL_FAILURE</h3>
+            <p class="error-message" id="errorMessage">Analysis sequence interrupted.</p>
+            <button class="export-btn" id="retryBtn">REBOOT_SCAN</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results Section -->
+      <section class="results-section hidden" id="resultsSection">
+
+        <!-- Safety Score Card -->
+        <div class="score-card">
+          <div class="score-circle" id="scoreCircle">
+            <svg class="score-svg" viewBox="0 0 200 200">
+              <circle class="score-bg" cx="100" cy="100" r="90"></circle>
+              <circle class="score-progress" id="scoreProgress" cx="100" cy="100" r="90"></circle>
+            </svg>
+            <div class="score-content">
+              <div class="score-value" id="scoreValue">--</div>
+              <div class="score-label">SAFETY_RATING</div>
+            </div>
+          </div>
+          <div class="score-info">
+            <h3 class="analyzed-url" id="analyzedUrl">--</h3>
+            <p class="score-description" id="scoreDescription">--</p>
+
+            <!-- New Category Breakdown -->
+            <div class="score-breakdown">
+              <div class="category-bar">
+                <span class="category-label">Security</span>
+                <div class="category-progress-bg">
+                  <div class="category-progress-fill" id="securityBar"></div>
+                </div>
+              </div>
+              <div class="category-bar">
+                <span class="category-label">Privacy</span>
+                <div class="category-progress-bg">
+                  <div class="category-progress-fill" id="privacyBar"></div>
+                </div>
+              </div>
+              <div class="category-bar">
+                <span class="category-label">Reputation</span>
+                <div class="category-progress-bg">
+                  <div class="category-progress-fill" id="reputationBar"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Threat Grid -->
+        <div class="threat-matrix">
+          <h3 class="section-title">FORENSIC_MODULES</h3>
+          <div class="threat-grid" id="threatGrid">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Details Container -->
+        <div class="details-container" id="detailsContainer">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Actions -->
+        <div class="export-section">
+          <button class="export-btn" id="exportJson">EXPORT_LOGS</button>
+          <button class="export-btn secondary" id="newScan">NEW_SYSTEM_SCAN</button>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text mono-stream">
+        [AetherTech Systems // OpenSafe Build 2.1.0]
+      </p>
+      <p class="footer-disclaimer">
+        End-to-end client-side forensics. No data trace left behind.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <div class="modal hidden" id="aboutModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeAbout">&times;</button>
+      <h2>System Overview</h2>
+      <p>OpenSafe is a pure forensics tool designed by AetherTech. It executes heuristic analysis directly in your
+        browser environment to ensure maximum privacy.</p>
+      <h3>Transparency Note</h3>
+      <p>To analyze websites that block direct browser requests, OpenSafe utilizes anonymous CORS proxies. While your
+        identity remains private, the target URL is processed by these third-party nodes.</p>
+      <h3>Core Vectors</h3>
+      <ul>
+        <li>SSL/TLS Infrastructure Audit</li>
+        <li>DOM Mutation & Content Shield Scan</li>
+        <li>Asynchronous Tracker Identification</li>
+        <li>Phishing Payload Recognition</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="limitationsModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeLimitations">&times;</button>
+      <h2>Protocol Constraints</h2>
+      <p>AetherTech OS follows strict protocol rules for safety:</p>
+      <ul>
+        <li><strong>No Data Trace</strong>: No scan results are ever sent to an AetherTech server.</li>
+        <li><strong>Sandbox Analysis</strong>: Heuristic detection is restricted to publicly reachable assets.</li>
+        <li><strong>Proxy Reliance</strong>: Analysis depth may vary based on proxy node availability.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="adModal">
+    <div class="modal-content ad-modal-content">
+      <button class="modal-close" id="closeAd">&times;</button>
+      <div class="ad-container">
+        <p class="ad-label">SPONSORED_CONTENT [AETHERTECH_AD_SERVER]</p>
+        <div class="ad-placeholder">
+          <!-- AdSense Unit Placeholder -->
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+               data-ad-slot="XXXXXXXXXX"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+               (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+        <button class="export-btn secondary" style="width:100%; margin-top:1rem;" id="continueBtn">CONTINUE_TO_RESULTS</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

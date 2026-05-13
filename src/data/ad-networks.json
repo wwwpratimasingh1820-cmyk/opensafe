@@ -1,0 +1,79 @@
+{
+    "networks": [
+        {
+            "name": "Google AdSense",
+            "domain": "googlesyndication.com",
+            "pattern": "adsbygoogle"
+        },
+        {
+            "name": "Google AdWords",
+            "domain": "googleadservices.com",
+            "pattern": "adwords"
+        },
+        {
+            "name": "DoubleClick",
+            "domain": "doubleclick.net",
+            "pattern": "doubleclick"
+        },
+        {
+            "name": "Media.net",
+            "domain": "media.net",
+            "pattern": "media"
+        },
+        {
+            "name": "Amazon Ads",
+            "domain": "amazon-adsystem.com",
+            "pattern": "amazon"
+        },
+        {
+            "name": "Taboola",
+            "domain": "taboola.com",
+            "pattern": "taboola"
+        },
+        {
+            "name": "Outbrain",
+            "domain": "outbrain.com",
+            "pattern": "outbrain"
+        },
+        {
+            "name": "AdRoll",
+            "domain": "adroll.com",
+            "pattern": "adroll"
+        },
+        {
+            "name": "Criteo",
+            "domain": "criteo.com",
+            "pattern": "criteo"
+        },
+        {
+            "name": "AppNexus",
+            "domain": "adnxs.com",
+            "pattern": "appnexus"
+        },
+        {
+            "name": "Pubmatic",
+            "domain": "pubmatic.com",
+            "pattern": "pubmatic"
+        },
+        {
+            "name": "OpenX",
+            "domain": "openx.net",
+            "pattern": "openx"
+        },
+        {
+            "name": "Index Exchange",
+            "domain": "indexexchange.com",
+            "pattern": "casalemedia"
+        },
+        {
+            "name": "Rubicon Project",
+            "domain": "rubiconproject.com",
+            "pattern": "rubicon"
+        },
+        {
+            "name": "Sovrn",
+            "domain": "lijit.com",
+            "pattern": "sovrn"
+        }
+    ]
+}
