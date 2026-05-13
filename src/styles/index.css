@@ -794,6 +794,8 @@ body::after {
   border-radius: 20px;
   width: 100%;
   max-width: 500px;
+  max-height: 85vh;
+  overflow-y: auto;
   padding: 3rem;
   position: relative;
   transform: scale(0.9) translateY(20px);
@@ -801,14 +803,32 @@ body::after {
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 20px var(--color-primary-glow);
 }
 
+/* Custom Scrollbar for Modal */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background: var(--color-primary-glow);
+  border-radius: 10px;
+}
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
 .modal.active .modal-content {
   transform: scale(1) translateY(0);
 }
 
 .modal-close {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
+  position: sticky;
+  float: right;
+  top: 0;
+  right: 0;
+  margin-top: -1.5rem;
+  margin-right: -1.5rem;
   background: rgba(255, 255, 255, 0.05);
   border: none;
   color: #fff;
