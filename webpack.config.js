@@ -54,6 +54,7 @@ module.exports = (env, argv) => {
           { from: 'src/assets', to: 'assets' },
           { from: 'src/data', to: 'data' },
           { from: 'manifest.json', to: 'manifest.json' },
+          { from: 'ads.txt', to: 'ads.txt' },
         ],
       }),
       ...(isProduction ? [
