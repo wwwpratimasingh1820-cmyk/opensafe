@@ -111,8 +111,11 @@ class App {
             // Modals
             aboutModal: document.getElementById('aboutModal'),
             limitationsModal: document.getElementById('limitationsModal'),
+            adModal: document.getElementById('adModal'),
             closeAbout: document.getElementById('closeAbout'),
             closeLimitations: document.getElementById('closeLimitations'),
+            closeAd: document.getElementById('closeAd'),
+            continueBtn: document.getElementById('continueBtn'),
         };
 
         // Safety check
@@ -164,7 +167,14 @@ class App {
             }
         });
 
-
+        // Ad Modal Listeners
+        this.elements.closeAd.addEventListener('click', () => this.hideModal('ad'));
+        this.elements.continueBtn.addEventListener('click', () => this.hideModal('ad'));
+        this.elements.adModal.addEventListener('click', (e) => {
+            if (e.target === this.elements.adModal) {
+                this.hideModal('ad');
+            }
+        });
 
         // Browser Back Button Support
         window.addEventListener('popstate', (event) => {
@@ -324,6 +334,9 @@ class App {
         // Hide progress, show results
         this.elements.progressSection.classList.add('hidden');
         this.elements.resultsSection.classList.remove('hidden');
+
+        // Show Adsterra Ad on each scan (per user request)
+        this.showModal('ad');
 
         // Update score
         this.updateScore(results.score);
@@ -519,6 +532,9 @@ class App {
         } else if (type === 'limitations') {
             this.elements.limitationsModal.classList.remove('hidden');
             this.elements.limitationsModal.classList.add('active');
+        } else if (type === 'ad') {
+            this.elements.adModal.classList.remove('hidden');
+            this.elements.adModal.classList.add('active');
         }
         document.body.style.overflow = 'hidden'; // Prevent scroll
     }
@@ -533,6 +549,9 @@ class App {
         } else if (type === 'limitations') {
             this.elements.limitationsModal.classList.add('hidden');
             this.elements.limitationsModal.classList.remove('active');
+        } else if (type === 'ad') {
+            this.elements.adModal.classList.add('hidden');
+            this.elements.adModal.classList.remove('active');
         }
         document.body.style.overflow = ''; // Restore scroll
     }

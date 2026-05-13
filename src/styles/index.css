@@ -902,7 +902,32 @@ body::after {
   animation: pulse-glow 2s infinite;
 }
 
+/* Ad Modal Specifics */
+.ad-modal-content {
+  max-width: 600px !important;
+  text-align: center;
+}
 
+.ad-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.ad-placeholder {
+  min-height: 250px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px dashed var(--color-surface-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
 
 /* Landing Page Info Grid */
 .landing-info-grid {
