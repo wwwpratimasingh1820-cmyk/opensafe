@@ -17,7 +17,7 @@
     rel="stylesheet">
 
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' 'unsafe-inline' https://pl29435511.profitablecpmratenetwork.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;">
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.profitablecpmratenetwork.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;">
 
   <!-- Adsterra Native Banner script moved to body end for better initialization -->
 
@@ -116,8 +116,16 @@
         </div>
       </section>
 
-      <div class="ad-banner-container" style="display:flex; justify-content:center; margin-bottom: 2rem; min-height: 100px;">
+      <!-- Results Guidance (UX) -->
+      <div class="results-guidance" style="text-align: center; margin-bottom: 1rem; animation: dataFlicker 2s infinite;">
+        <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-primary); letter-spacing: 2px; text-transform: uppercase;">
+          ▼ SCAN_COMPLETE: SCROLL DOWN FOR REPORT ▼
+        </span>
+      </div>
+
+      <div class="ad-banner-container" style="display:flex; flex-direction:column; align-items:center; margin-bottom: 2rem; min-height: 250px;">
         <div id="container-baaebe851e35477492bb02201096d361"></div>
+        <script async="async" data-cfasync="false" src="https://pl29435511.profitablecpmratenetwork.com/baaebe851e35477492bb02201096d361/invoke.js"></script>
       </div>
 
       <!-- Results Section -->
@@ -235,7 +243,7 @@
     <div class="modal-content">
       <button class="modal-close" id="closeLimitations">&times;</button>
       <h2>Protocol Constraints</h2>
-      <p>AetherTech OS follows strict protocol rules for safety:</p>
+      <p>AetherTech OS follows <strong style="color:var(--color-primary)">strict protocol rules</strong> for safety:</p>
       <ul>
         <li><strong>No Data Trace</strong>: No scan results are ever sent to an AetherTech server.</li>
         <li><strong>Sandbox Analysis</strong>: Heuristic detection is restricted to publicly reachable assets.</li>
@@ -244,10 +252,6 @@
     </div>
   </div>
 
-
-
-  <!-- Adsterra Native Banner -->
-  <script async="async" data-cfasync="false" src="https://pl29435511.profitablecpmratenetwork.com/baaebe851e35477492bb02201096d361/invoke.js"></script>
 </body>
 
 </html>
