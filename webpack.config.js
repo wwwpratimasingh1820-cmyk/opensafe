@@ -53,6 +53,8 @@ module.exports = (env, argv) => {
         patterns: [
           { from: 'src/assets', to: 'assets' },
           { from: 'src/data', to: 'data' },
+          { from: 'src/robots.txt', to: 'robots.txt' },
+          { from: 'src/sitemap.xml', to: 'sitemap.xml' },
           { from: 'manifest.json', to: 'manifest.json' },
         ],
       }),
